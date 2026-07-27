@@ -37,10 +37,10 @@ export default function StudentLogin({ onForgotPassword, onLoginSuccess }) {
         backdropFilter: 'blur(32px) saturate(220%)',
         WebkitBackdropFilter: 'blur(32px) saturate(220%)',
         padding: '2.25rem 2rem 2rem 2rem',
-        borderTop: '4px solid #7B1FA2',
+        borderTop: '4px solid #5E095E',
         boxShadow: '0 24px 60px rgba(10, 0, 20, 0.35), 0 0 0 1px rgba(255,255,255,0.7) inset',
         border: '1px solid rgba(255, 255, 255, 0.75)',
-        borderTop: '4px solid #7B1FA2',
+        borderTop: '4px solid #5E095E',
       }}
     >
       <div style={{ marginBottom: '1.75rem' }}>
@@ -172,7 +172,7 @@ export default function StudentLogin({ onForgotPassword, onLoginSuccess }) {
           className="btn-forgot-pwd"
           id="btn-forgot-password"
         >
-          <Key size={15} color="#6B21A8" />
+          <Key size={15} color="#5E095E" />
           <span>Forgot Password?</span>
         </button>
       </div>

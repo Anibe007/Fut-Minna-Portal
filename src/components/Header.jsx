@@ -12,12 +12,12 @@ export default function Header({ onOpenModal, onToggleMobileMenu }) {
       position: 'sticky',
       top: 0,
       zIndex: 50,
-      borderBottom: '3px solid #6B21A8'
+      borderBottom: '3px solid #5E095E'
     }}>
       {/* Gold gradient accent line at very bottom */}
       <div style={{
         height: '2px',
-        background: 'linear-gradient(90deg, #6B21A8 0%, #d4af37 40%, #f0d060 50%, #d4af37 60%, #6B21A8 100%)',
+        background: 'linear-gradient(90deg, #5E095E 0%, #d4af37 40%, #f0d060 50%, #d4af37 60%, #5E095E 100%)',
         position: 'absolute',
         bottom: 0,
         left: 0,
@@ -44,8 +44,8 @@ export default function Header({ onOpenModal, onToggleMobileMenu }) {
               objectFit: 'contain',
               background: '#ffffff',
               padding: '2px',
-              border: '2px solid rgba(107, 33, 168, 0.35)',
-              boxShadow: '0 4px 16px rgba(107, 33, 168, 0.2)',
+              border: '2px solid rgba(94, 9, 94, 0.35)',
+              boxShadow: '0 4px 16px rgba(94, 9, 94, 0.2)',
               flexShrink: 0
             }}
           />
@@ -62,7 +62,7 @@ export default function Header({ onOpenModal, onToggleMobileMenu }) {
             </h1>
             <p style={{
               fontSize: '0.8rem',
-              color: '#6B21A8',
+              color: '#5E095E',
               fontWeight: 600,
               marginTop: '2px',
               letterSpacing: '0.02em'

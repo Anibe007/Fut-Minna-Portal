@@ -2,19 +2,18 @@
   --font-primary: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-display: 'Outfit', sans-serif;
 
-  /* ============ EXACT FUT-MINNA ePortal Purple ============
-     Sampled directly from https://eportal.futminna.edu.ng
+  /* ============ User Requested Purple #5E095E ============
      Background/overlay: deep near-black wine-purple
-     Buttons/active:     vivid rich purple #7B1FA2
+     Buttons/active:     vivid rich purple #5E095E
   ======================================================== */
   --purple-950: #0d000f;   /* near-black sidebar bg        */
   --purple-900: #14000e;   /* very dark overlay base       */
   --purple-850: #1e001a;   /* dark overlay mid             */
-  --purple-800: #7B1FA2;   /* PRIMARY — exact portal purple */
-  --purple-700: #8B2FC9;   /* slightly lighter active      */
-  --purple-600: #9C3FE0;   /* hover highlight              */
-  --purple-500: #b060f0;   /* light accent                 */
-  --purple-400: #c084fc;   /* pale tint                    */
+  --purple-800: #5E095E;   /* PRIMARY — requested purple */
+  --purple-700: #6D0C6D;   /* slightly lighter active      */
+  --purple-600: #7D107D;   /* hover highlight              */
+  --purple-500: #9D149D;   /* light accent                 */
+  --purple-400: #BD18BD;   /* pale tint                    */
   --purple-100: #f3e8ff;
   --purple-50:  #faf5ff;
 
@@ -33,7 +32,7 @@
   --glass-card-hover: rgba(255, 255, 255, 0.96);
   --glass-border: rgba(255, 255, 255, 0.70);
   --glass-border-gold: rgba(212, 175, 55, 0.45);
-  --glass-border-purple: rgba(123, 31, 162, 0.35);
+  --glass-border-purple: rgba(94, 9, 94, 0.35); /* Based on #5E095E */
   --glass-shadow: 0 20px 50px rgba(10, 0, 15, 0.50), 0 0 0 1px rgba(255, 255, 255, 0.45) inset;
 
   /* Status Badge Colors */
@@ -89,7 +88,7 @@ html, body {
   background: linear-gradient(
     160deg,
     rgba(13, 0, 15, 0.52) 0%,
-    rgba(123, 31, 162, 0.30) 35%,
+    rgba(94, 9, 94, 0.30) 35%,
     rgba(13, 0, 15, 0.48) 65%,
     rgba(10, 0, 10, 0.58) 100%
   );
@@ -159,7 +158,7 @@ html, body {
   box-shadow:
     0 16px 40px rgba(10, 0, 20, 0.22),
     0 2px 0 rgba(255, 255, 255, 0.95) inset,
-    0 -1px 0 rgba(123, 31, 162, 0.08) inset;
+    0 -1px 0 rgba(94, 9, 94, 0.08) inset;
   border-radius: var(--radius-lg);
   transition: var(--transition-smooth);
   position: relative;
@@ -184,7 +183,7 @@ html, body {
   border-color: rgba(255, 255, 255, 1);
   box-shadow:
     0 24px 50px rgba(10, 0, 20, 0.28),
-    0 0 30px rgba(123, 31, 162, 0.18),
+    0 0 30px rgba(94, 9, 94, 0.18),
     0 2px 0 rgba(255, 255, 255, 1) inset;
 }
 
@@ -460,7 +459,7 @@ html, body {
   background: rgba(10, 0, 14, 0.88);
   backdrop-filter: blur(30px) saturate(180%);
   -webkit-backdrop-filter: blur(30px) saturate(180%);
-  border-left: 1px solid rgba(123, 31, 162, 0.3);
+  border-left: 1px solid rgba(94, 9, 94, 0.3);
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
@@ -574,7 +573,7 @@ html, body {
 .hdr-btn-admin {
   background: transparent;
   color: #2e1065;
-  border: 1.5px solid #6B21A8;
+  border: 1.5px solid #5E095E;
   padding: 0.52rem 1.0rem;
   font-size: 0.83rem;
   font-weight: 700;
@@ -587,15 +586,15 @@ html, body {
   transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .hdr-btn-admin:hover {
-  background: #6B21A8;
+  background: #5E095E;
   color: #ffffff;
-  border-color: #6B21A8;
-  box-shadow: 0 4px 14px rgba(107, 33, 168, 0.35);
+  border-color: #5E095E;
+  box-shadow: 0 4px 14px rgba(94, 9, 94, 0.35);
   transform: translateY(-1px);
 }
 
 .hdr-btn-payments {
-  background: linear-gradient(135deg, #6B21A8 0%, #2e1065 100%);
+  background: linear-gradient(135deg, #5E095E 0%, #2e1065 100%);
   color: #ffffff;
   border: 1px solid rgba(212, 175, 55, 0.4);
   padding: 0.52rem 1.0rem;
@@ -608,12 +607,12 @@ html, body {
   gap: 0.4rem;
   font-family: var(--font-primary);
   transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 3px 10px rgba(107, 33, 168, 0.35);
+  box-shadow: 0 3px 10px rgba(94, 9, 94, 0.35);
 }
 .hdr-btn-payments:hover {
   background: linear-gradient(135deg, #7e2dbf 0%, #4a1587 100%);
   border-color: rgba(212, 175, 55, 0.7);
-  box-shadow: 0 6px 20px rgba(107, 33, 168, 0.5), 0 0 12px rgba(212, 175, 55, 0.2);
+  box-shadow: 0 6px 20px rgba(94, 9, 94, 0.5), 0 0 12px rgba(212, 175, 55, 0.2);
   transform: translateY(-1px);
 }
 
@@ -642,7 +641,7 @@ html, body {
 /* --- Mobile Toggle Button --- */
 .mobile-toggle-btn {
   display: none;
-  background: linear-gradient(135deg, #6B21A8 0%, #2e1065 100%);
+  background: linear-gradient(135deg, #5E095E 0%, #2e1065 100%);
   color: #ffffff;
   border: 1px solid rgba(212, 175, 55, 0.4);
   width: 44px;
@@ -652,11 +651,11 @@ html, body {
   justify-content: center;
   cursor: pointer;
   transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 4px 12px rgba(107, 33, 168, 0.4);
+  box-shadow: 0 4px 12px rgba(94, 9, 94, 0.4);
 }
 .mobile-toggle-btn:hover {
   background: linear-gradient(135deg, #7e2dbf 0%, #4a1587 100%);
-  box-shadow: 0 6px 18px rgba(107, 33, 168, 0.55);
+  box-shadow: 0 6px 18px rgba(94, 9, 94, 0.55);
   transform: translateY(-1px);
 }
 
@@ -674,13 +673,13 @@ html, body {
   transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .sidebar-nav-btn:hover {
-  background: rgba(107, 33, 168, 0.25);
-  border-color: rgba(107, 33, 168, 0.4);
+  background: rgba(94, 9, 94, 0.25);
+  border-color: rgba(94, 9, 94, 0.4);
 }
 .sidebar-nav-btn.active {
-  background: linear-gradient(135deg, #6B21A8 0%, #2e1065 100%);
+  background: linear-gradient(135deg, #5E095E 0%, #2e1065 100%);
   border-color: rgba(212, 175, 55, 0.55);
-  box-shadow: 0 6px 16px rgba(107, 33, 168, 0.5), 0 0 10px rgba(212, 175, 55, 0.18);
+  box-shadow: 0 6px 16px rgba(94, 9, 94, 0.5), 0 0 10px rgba(212, 175, 55, 0.18);
 }
 
 /* --- Mobile Drawer Nav Items --- */
@@ -702,12 +701,12 @@ html, body {
   font-family: var(--font-primary);
 }
 .drawer-nav-item:hover {
-  background: rgba(107, 33, 168, 0.3);
-  border-color: rgba(107, 33, 168, 0.4);
+  background: rgba(94, 9, 94, 0.3);
+  border-color: rgba(94, 9, 94, 0.4);
   color: #ffffff;
 }
 .drawer-nav-item.active {
-  background: rgba(107, 33, 168, 0.35);
+  background: rgba(94, 9, 94, 0.35);
   border-color: rgba(168, 85, 247, 0.5);
   color: #ffffff;
   font-weight: 700;
@@ -730,7 +729,7 @@ html, body {
   font-family: var(--font-primary);
 }
 .drawer-portal-btn:hover {
-  background: rgba(107, 33, 168, 0.4);
+  background: rgba(94, 9, 94, 0.4);
   border-color: rgba(212, 175, 55, 0.4);
   transform: translateX(4px);
 }
@@ -774,9 +773,9 @@ html, body {
 }
 .app-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(30, 10, 60, 0.22), 0 0 0 1px rgba(107, 33, 168, 0.2);
+  box-shadow: 0 20px 40px rgba(30, 10, 60, 0.22), 0 0 0 1px rgba(94, 9, 94, 0.2);
   background: rgba(250, 245, 255, 0.95);
-  border-color: rgba(107, 33, 168, 0.25);
+  border-color: rgba(94, 9, 94, 0.25);
 }
 
 /* --- Pill Check (CHECK NOW button) --- */
@@ -798,7 +797,7 @@ html, body {
   color: #ffffff !important;
   border-color: var(--purple-800) !important;
   transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(107, 33, 168, 0.3);
+  box-shadow: 0 4px 12px rgba(94, 9, 94, 0.3);
 }
 
 /* --- Login Button enhanced hover --- */
@@ -813,7 +812,7 @@ html, body {
   padding: 0.6rem 1.25rem;
   font-size: 0.85rem;
   background: rgba(243, 232, 255, 0.9);
-  border: 1px solid rgba(107, 33, 168, 0.2);
+  border: 1px solid rgba(94, 9, 94, 0.2);
   color: #2e1065;
   font-weight: 700;
   border-radius: 20px;
@@ -825,18 +824,18 @@ html, body {
   font-family: var(--font-primary);
 }
 .btn-forgot-pwd:hover {
-  background: #6B21A8;
+  background: #5E095E;
   color: #ffffff;
-  border-color: #6B21A8;
+  border-color: #5E095E;
   transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(107, 33, 168, 0.35);
+  box-shadow: 0 4px 14px rgba(94, 9, 94, 0.35);
 }
 
 /* --- Glass Input focus update --- */
 .glass-input:focus {
   background: #ffffff;
-  border-color: #6B21A8;
-  box-shadow: 0 0 0 4px rgba(107, 33, 168, 0.15);
+  border-color: #5E095E;
+  box-shadow: 0 0 0 4px rgba(94, 9, 94, 0.15);
 }
 
 /* --- Glass Card hover glow update --- */
@@ -844,7 +843,7 @@ html, body {
   background: var(--glass-card-hover);
   transform: translateY(-3px);
   border-color: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 20px 40px rgba(30, 10, 60, 0.22), 0 0 25px rgba(107, 33, 168, 0.18);
+  box-shadow: 0 20px 40px rgba(30, 10, 60, 0.22), 0 0 25px rgba(94, 9, 94, 0.18);
 }
 
 /* --- Announcements next button --- */
@@ -881,7 +880,7 @@ html, body {
   white-space: nowrap;
   padding: 0.38rem 0.75rem;
   border-radius: 8px;
-  border: 1px solid rgba(107, 33, 168, 0.5);
+  border: 1px solid rgba(94, 9, 94, 0.5);
   box-shadow: 0 4px 14px rgba(30, 10, 60, 0.35);
   pointer-events: none;
   opacity: 0;
