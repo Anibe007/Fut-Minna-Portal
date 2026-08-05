@@ -44,13 +44,15 @@ export default function App() {
     setActiveModal('instructions');
   };
 
-  const handleOpenHeaderModal = (id) => {
+  const handleOpenHeaderModal = (id, extraKey) => {
     if (id === 'admin-login') {
       setActiveModal('admin-login');
     } else if (id === 'central-payments') {
       setActiveModal('central-payments');
     } else if (id === 'post-utme') {
       handleOpenInstructions('undergraduate');
+    } else if (id === 'instructions') {
+      handleOpenInstructions(extraKey || 'pre-degree');
     }
   };
 

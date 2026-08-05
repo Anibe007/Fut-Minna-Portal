@@ -77,7 +77,19 @@ export default function MobileNav({ isOpen, onClose, activeTab, setActiveTab, on
             return (
               <button
                 key={item.id}
-                onClick={() => { setActiveTab(item.id); onClose(); }}
+                onClick={() => {
+                  setActiveTab(item.id);
+                  if (item.id === 'payments') {
+                    onOpenModal('central-payments');
+                  } else if (item.id === 'admissions') {
+                    onOpenModal('instructions', 'undergraduate');
+                  } else if (item.id === 'applications') {
+                    onOpenModal('instructions', 'pre-degree');
+                  } else if (item.id === 'support') {
+                    onOpenModal('admin-login');
+                  }
+                  onClose();
+                }}
                 className={`drawer-nav-item${isActive ? ' active' : ''}`}
               >
                 <span style={{ color: isActive ? '#c084fc' : '#94a3b8' }}>
@@ -98,7 +110,18 @@ export default function MobileNav({ isOpen, onClose, activeTab, setActiveTab, on
           {topNavButtons.map((btn) => (
             <button
               key={btn.id}
-              onClick={() => { onOpenModal(btn.id); onClose(); }}
+              onClick={() => {
+                if (btn.id === 'admin-login') {
+                  onOpenModal('admin-login');
+                } else if (btn.id === 'central-payments') {
+                  onOpenModal('central-payments');
+                } else if (btn.id === 'post-utme') {
+                  onOpenModal('instructions', 'undergraduate');
+                } else {
+                  onOpenModal(btn.id);
+                }
+                onClose();
+              }}
               className="drawer-portal-btn"
             >
               {getHeaderIcon(btn.icon)}
