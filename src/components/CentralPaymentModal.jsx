@@ -201,7 +201,7 @@ export default function CentralPaymentModal({ onClose }) {
                   <p style={{ fontSize: '0.78rem', fontWeight: 700, color: BRAND, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.65rem' }}>
                     Select Payment Type
                   </p>
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.6rem', marginBottom: '1.5rem' }}>
+                  <div className="payment-fee-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '0.6rem', marginBottom: '1.5rem' }}>
                     {FEE_CATEGORIES.map(fee => {
                       const Icon = fee.icon;
                       const active = selectedFee === fee.id;
