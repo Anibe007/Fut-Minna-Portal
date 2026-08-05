@@ -145,20 +145,24 @@ export default function StudentDashboard({ studentName = 'David Anibe', onLogout
   const totalOwed = 6000;
 
   return (
-    <div style={{ display: 'flex', height: '100vh', background: '#f1f3f8', fontFamily: 'var(--font-body, Inter, sans-serif)', overflow: 'hidden' }}>
+    <div className="student-dashboard-container" style={{ display: 'flex', minHeight: '100vh', background: '#f1f3f8', fontFamily: 'var(--font-body, Inter, sans-serif)', overflowX: 'hidden' }}>
 
-      {/* Mobile Overlay */}
+      {/* Mobile Drawer Overlay */}
       {sidebarOpen && (
-        <div onClick={() => setSidebarOpen(false)} style={{ position: 'fixed', inset: 0, background: 'rgba(10,0,20,0.55)', zIndex: 40, backdropFilter: 'blur(4px)' }} />
+        <div
+          onClick={() => setSidebarOpen(false)}
+          style={{ position: 'fixed', inset: 0, background: 'rgba(10,0,20,0.65)', zIndex: 300, backdropFilter: 'blur(4px)' }}
+        />
       )}
 
       {/* ── SIDEBAR ── */}
-      <aside style={{
+      <aside className={`student-dashboard-sidebar ${sidebarOpen ? 'open' : ''}`} style={{
         width: 260, flexShrink: 0,
         background: BRAND,
         display: 'flex', flexDirection: 'column',
         position: 'relative', overflow: 'hidden',
         boxShadow: '4px 0 30px rgba(74,0,74,0.2)',
+        zIndex: 350,
       }}>
         {/* Decorative bg */}
         <div style={{ position: 'absolute', top: -60, right: -60, width: 180, height: 180, borderRadius: '50%', background: 'rgba(255,255,255,0.03)', pointerEvents: 'none' }} />

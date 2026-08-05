@@ -1551,3 +1551,21 @@ html, body {
   }
 }
 
+/* ---- Student Dashboard Responsive ---- */
+@media (max-width: 1024px) {
+  .student-dashboard-sidebar {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    height: 100vh !important;
+    transform: translateX(-100%);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .student-dashboard-sidebar.open {
+    transform: translateX(0) !important;
+  }
+}
+
+
