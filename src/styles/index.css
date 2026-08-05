@@ -1572,6 +1572,12 @@ html, body {
   }
 }
 
+@media (max-width: 900px) {
+  .admin-grid-split {
+    grid-template-columns: 1fr !important;
+  }
+}
+
 @media (max-width: 640px) {
   .admin-header-sub,
   .admin-header-search,

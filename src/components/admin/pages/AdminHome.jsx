@@ -157,7 +157,7 @@ export default function AdminHome({ adminUser, onNavigatePage }) {
       </div>
 
       {/* ── Quick Actions + Recent Activity ── */}
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.3fr', gap: '1.25rem', alignItems: 'start' }}>
+      <div className="admin-grid-split" style={{ display: 'grid', gridTemplateColumns: '1fr 1.3fr', gap: '1.25rem', alignItems: 'start' }}>
 
         {/* Quick Actions */}
         <div style={{
@@ -257,7 +257,7 @@ export default function AdminHome({ adminUser, onNavigatePage }) {
       </div>
 
       {/* ── Faculty Distribution + Population Card ── */}
-      <div style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr', gap: '1.25rem', alignItems: 'start' }}>
+      <div className="admin-grid-split" style={{ display: 'grid', gridTemplateColumns: '1.5fr 1fr', gap: '1.25rem', alignItems: 'start' }}>
 
         {/* Faculty Distribution */}
         <div style={{
