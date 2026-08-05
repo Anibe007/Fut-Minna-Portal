@@ -129,51 +129,87 @@ export function InstructionsModal({ instructionsKey, onClose }) {
 
   return (
     <div className="modal-backdrop" onClick={onClose}>
-      <div className="modal-glass-card" onClick={(e) => e.stopPropagation()}>
+      <div className="modal-glass-card" style={{ maxWidth: '620px', width: '100%', maxHeight: '90vh', display: 'flex', flexDirection: 'column' }} onClick={(e) => e.stopPropagation()}>
         
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.25rem', paddingBottom: '0.85rem', borderBottom: '1px solid #e2e8f0' }}>
+        {/* Modal Header */}
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1rem', paddingBottom: '0.85rem', borderBottom: '1px solid #e2e8f0' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-            <div style={{ padding: '0.5rem', borderRadius: '10px', background: 'rgba(243, 232, 255, 0.9)' }}>
-              <FileText size={22} color="#6b1fad" />
+            <div style={{ padding: '0.6rem', borderRadius: '12px', background: 'rgba(243, 232, 255, 0.9)', border: '1px solid rgba(168, 85, 247, 0.25)' }}>
+              <FileText size={24} color="#6b1fad" />
             </div>
-            <h3 style={{ fontSize: '1.15rem', fontWeight: 800, color: '#1e0538', fontFamily: 'var(--font-display)' }}>
-              {data.title}
-            </h3>
+            <div>
+              <h3 style={{ fontSize: '1.15rem', fontWeight: 800, color: '#1e0538', fontFamily: 'var(--font-display)', margin: 0 }}>
+                {data.title}
+              </h3>
+              <p style={{ fontSize: '0.78rem', color: '#6b1fad', fontWeight: 700, margin: '0.15rem 0 0' }}>
+                {data.category}
+              </p>
+            </div>
           </div>
 
-          <button onClick={onClose} className="btn-close-drawer" style={{ color: '#475569', background: 'rgba(0, 0, 0, 0.05)', border: '1px solid #cbd5e1' }}>
+          <button onClick={onClose} className="btn-close-drawer" style={{ color: '#475569', background: 'rgba(0, 0, 0, 0.05)', border: '1px solid #cbd5e1' }} title="Close">
             <X size={20} />
           </button>
         </div>
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem', maxHeight: '350px', overflowY: 'auto' }}>
+        {/* Quick Info Metadata Cards */}
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: '0.65rem', marginBottom: '1.2rem' }}>
+          <div style={{ background: '#f8fafc', padding: '0.65rem 0.85rem', borderRadius: '10px', border: '1px solid #e2e8f0' }}>
+            <span style={{ fontSize: '0.7rem', fontWeight: 700, color: '#64748b', textTransform: 'uppercase' }}>Application Fee</span>
+            <p style={{ fontSize: '0.85rem', fontWeight: 800, color: '#5E095E', margin: '0.1rem 0 0' }}>{data.fee}</p>
+          </div>
+          <div style={{ background: '#f8fafc', padding: '0.65rem 0.85rem', borderRadius: '10px', border: '1px solid #e2e8f0' }}>
+            <span style={{ fontSize: '0.7rem', fontWeight: 700, color: '#64748b', textTransform: 'uppercase' }}>Deadline</span>
+            <p style={{ fontSize: '0.85rem', fontWeight: 800, color: '#dc2626', margin: '0.1rem 0 0' }}>{data.deadline}</p>
+          </div>
+        </div>
+
+        {/* Eligibility Note */}
+        {data.eligibility && (
+          <div style={{ background: 'rgba(94, 9, 94, 0.06)', borderLeft: '4px solid #5E095E', borderRadius: '8px', padding: '0.75rem 0.9rem', marginBottom: '1.2rem' }}>
+            <p style={{ fontSize: '0.78rem', fontWeight: 700, color: '#5E095E', margin: 0 }}>
+              <strong>Eligibility Criteria:</strong> {data.eligibility}
+            </p>
+          </div>
+        )}
+
+        <h4 style={{ fontSize: '0.85rem', fontWeight: 800, color: '#1e0538', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '0.75rem' }}>
+          Step-by-Step Registration Procedure
+        </h4>
+
+        {/* Scrollable Step List */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', overflowY: 'auto', paddingRight: '0.3rem', flex: 1 }}>
           {data.steps.map((step, idx) => (
-            <div key={idx} style={{ display: 'flex', gap: '0.85rem', alignItems: 'flex-start', background: '#f8fafc', padding: '0.85rem 1rem', borderRadius: '12px' }}>
+            <div key={idx} style={{ display: 'flex', gap: '0.85rem', alignItems: 'flex-start', background: '#f8fafc', padding: '0.85rem 1rem', borderRadius: '12px', border: '1px solid #edf2f7' }}>
               <span style={{
-                background: '#6b1fad',
+                background: 'linear-gradient(135deg, #5E095E 0%, #2e1065 100%)',
                 color: '#fff',
-                width: '24px',
-                height: '24px',
+                width: '26px',
+                height: '26px',
                 borderRadius: '50%',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 fontSize: '0.75rem',
                 fontWeight: 800,
-                flexShrink: 0
+                flexShrink: 0,
+                boxShadow: '0 2px 6px rgba(94, 9, 94, 0.3)'
               }}>
                 {idx + 1}
               </span>
-              <p style={{ fontSize: '0.875rem', color: '#334155', lineHeight: 1.5, fontWeight: 500 }}>
+              <p style={{ fontSize: '0.875rem', color: '#334155', lineHeight: 1.5, fontWeight: 500, margin: 0 }}>
                 {step}
               </p>
             </div>
           ))}
         </div>
 
-        <button onClick={onClose} className="btn-purple-primary" style={{ width: '100%', marginTop: '1.5rem' }}>
-          I Understand & Proceed
-        </button>
+        {/* Action Button */}
+        <div style={{ display: 'flex', gap: '0.75rem', marginTop: '1.25rem', paddingTop: '0.85rem', borderTop: '1px solid #e2e8f0' }}>
+          <button onClick={onClose} className="btn-purple-primary" style={{ width: '100%' }}>
+            I Understand & Close Instructions
+          </button>
+        </div>
 
       </div>
     </div>

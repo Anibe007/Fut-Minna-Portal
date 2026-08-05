@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Eye, EyeOff, Key, LogIn, CheckCircle2, ShieldAlert } from 'lucide-react';
 
 export default function StudentLogin({ onForgotPassword, onLoginSuccess }) {
-  const [username, setUsername] = useState('Ismail');
+  const [username, setUsername] = useState('David Anibe');
   const [password, setPassword] = useState('password123');
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -37,10 +37,9 @@ export default function StudentLogin({ onForgotPassword, onLoginSuccess }) {
         backdropFilter: 'blur(32px) saturate(220%)',
         WebkitBackdropFilter: 'blur(32px) saturate(220%)',
         padding: '2.25rem 2rem 2rem 2rem',
-        borderTop: '4px solid #5E095E',
         boxShadow: '0 24px 60px rgba(10, 0, 20, 0.35), 0 0 0 1px rgba(255,255,255,0.7) inset',
         border: '1px solid rgba(255, 255, 255, 0.75)',
-        borderTop: '4px solid #5E095E',
+        borderTop: '4px solid rgb(74, 0, 74)',
       }}
     >
       <div style={{ marginBottom: '1.75rem' }}>
@@ -106,7 +105,7 @@ export default function StudentLogin({ onForgotPassword, onLoginSuccess }) {
               className="glass-input"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-              placeholder="e.g. Ismail or FUT/2026/001"
+              placeholder="e.g. David Anibe or FUT/2025/001"
               required
             />
           </div>

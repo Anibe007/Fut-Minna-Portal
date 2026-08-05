@@ -36,8 +36,8 @@ export default function Sidebar({ activeTab, setActiveTab }) {
             objectFit: 'contain',
             background: '#ffffff',
             padding: '2px',
-            border: '2px solid rgba(94, 9, 94, 0.4)',
-            boxShadow: '0 3px 10px rgba(94, 9, 94, 0.25)'
+            border: '2px solid rgba(74, 0, 74, 0.4)',
+            boxShadow: '0 3px 10px rgba(74, 0, 74, 0.25)'
           }}
         />
       </div>

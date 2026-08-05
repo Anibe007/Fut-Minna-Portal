@@ -12,12 +12,12 @@ export default function Header({ onOpenModal, onToggleMobileMenu }) {
       position: 'sticky',
       top: 0,
       zIndex: 50,
-      borderBottom: '3px solid #5E095E'
+      borderBottom: '3px solid rgb(74, 0, 74)'
     }}>
       {/* Gold gradient accent line at very bottom */}
       <div style={{
         height: '2px',
-        background: 'linear-gradient(90deg, #5E095E 0%, #d4af37 40%, #f0d060 50%, #d4af37 60%, #5E095E 100%)',
+        background: 'linear-gradient(90deg, rgb(74, 0, 74) 0%, #d4af37 40%, #f0d060 50%, #d4af37 60%, rgb(74, 0, 74) 100%)',
         position: 'absolute',
         bottom: 0,
         left: 0,
@@ -44,8 +44,8 @@ export default function Header({ onOpenModal, onToggleMobileMenu }) {
               objectFit: 'contain',
               background: '#ffffff',
               padding: '2px',
-              border: '2px solid rgba(94, 9, 94, 0.35)',
-              boxShadow: '0 4px 16px rgba(94, 9, 94, 0.2)',
+              border: '2px solid rgba(74, 0, 74, 0.35)',
+              boxShadow: '0 4px 16px rgba(74, 0, 74, 0.2)',
               flexShrink: 0
             }}
           />
@@ -53,7 +53,7 @@ export default function Header({ onOpenModal, onToggleMobileMenu }) {
             <h1 style={{
               fontSize: '1.2rem',
               fontWeight: 800,
-              color: '#2e1065',
+              color: 'rgb(74, 0, 74)',
               fontFamily: 'var(--font-display)',
               lineHeight: 1.2,
               letterSpacing: '-0.3px'
@@ -62,7 +62,7 @@ export default function Header({ onOpenModal, onToggleMobileMenu }) {
             </h1>
             <p style={{
               fontSize: '0.8rem',
-              color: '#5E095E',
+              color: 'rgb(74, 0, 74)',
               fontWeight: 600,
               marginTop: '2px',
               letterSpacing: '0.02em'

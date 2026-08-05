@@ -3,18 +3,36 @@ import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 import MobileNav from './components/MobileNav';
 import StudentLogin from './components/StudentLogin';
+import StudentDashboard from './components/StudentDashboard';
 import Applications from './components/Applications';
 import Admissions from './components/Admissions';
 import NewsTicker from './components/NewsTicker';
 import { AdmissionCheckModal, InstructionsModal, ForgotPasswordModal } from './components/Modals';
+import CentralPaymentModal from './components/CentralPaymentModal';
 import Footer from './components/Footer';
+import AdminLoginModal from './components/admin/AdminLoginModal';
+import AdminDashboard  from './components/admin/AdminDashboard';
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('home');
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
-  const [activeModal, setActiveModal] = useState(null); // 'checkStatus', 'instructions', 'forgotPassword', 'admin-login', 'central-payments', 'post-utme'
+  const [activeModal, setActiveModal] = useState(null);
   const [selectedCardData, setSelectedCardData] = useState(null);
   const [selectedInstructionsKey, setSelectedInstructionsKey] = useState('pre-degree');
+
+  // Admin auth state — null means public portal view
+  const [adminUser, setAdminUser] = useState(null);
+
+  // Student auth state
+  const [studentUser, setStudentUser] = useState(null);
+
+  const handleStudentLogin = (username) => {
+    setStudentUser(username);
+  };
+
+  const handleStudentLogout = () => {
+    setStudentUser(null);
+  };
 
   const handleOpenStatusModal = (card) => {
     setSelectedCardData(card);
@@ -28,14 +46,38 @@ export default function App() {
 
   const handleOpenHeaderModal = (id) => {
     if (id === 'admin-login') {
-      alert('🔒 Redirecting to FUT-MINNA Staff & Admin Authentication Gateway...');
+      setActiveModal('admin-login');
     } else if (id === 'central-payments') {
-      alert('💳 Opening FUT-MINNA Central Payments & Remita Gateway...');
+      setActiveModal('central-payments');
     } else if (id === 'post-utme') {
       handleOpenInstructions('undergraduate');
     }
   };
 
+  const handleAdminLogin = (user) => {
+    setActiveModal(null);
+    setAdminUser(user);
+  };
+
+  const handleAdminLogout = () => {
+    setAdminUser(null);
+  };
+
+  // ── Admin is authenticated → show full Admin Dashboard ──
+  if (adminUser) {
+    return (
+      <AdminDashboard adminUser={adminUser} onLogout={handleAdminLogout} />
+    );
+  }
+
+  // ── Student is logged in → show Student Dashboard ──
+  if (studentUser) {
+    return (
+      <StudentDashboard studentName={studentUser} onLogout={handleStudentLogout} />
+    );
+  }
+
+  // ── Default: Public student portal ──
   return (
     <div className="app-container">
       <div className="app-overlay" />
@@ -64,6 +106,7 @@ export default function App() {
               <div>
                 <StudentLogin
                   onForgotPassword={() => setActiveModal('forgotPassword')}
+                  onLoginSuccess={handleStudentLogin}
                 />
               </div>
 
@@ -83,7 +126,7 @@ export default function App() {
         {/* Footer */}
         <Footer />
 
-        {/* Mobile Navigation Drawer with Explicit Cancel / Close Button */}
+        {/* Mobile Navigation Drawer */}
         <MobileNav
           isOpen={isMobileNavOpen}
           onClose={() => setIsMobileNavOpen(false)}
@@ -92,7 +135,15 @@ export default function App() {
           onOpenModal={handleOpenHeaderModal}
         />
 
-        {/* Interactive Modals */}
+        {/* Staff / Admin Login Modal */}
+        {activeModal === 'admin-login' && (
+          <AdminLoginModal
+            onClose={() => setActiveModal(null)}
+            onLoginSuccess={handleAdminLogin}
+          />
+        )}
+
+        {/* Student-facing Modals */}
         {activeModal === 'checkStatus' && (
           <AdmissionCheckModal
             cardData={selectedCardData}
@@ -109,6 +160,12 @@ export default function App() {
 
         {activeModal === 'forgotPassword' && (
           <ForgotPasswordModal
+            onClose={() => setActiveModal(null)}
+          />
+        )}
+
+        {activeModal === 'central-payments' && (
+          <CentralPaymentModal
             onClose={() => setActiveModal(null)}
           />
         )}
