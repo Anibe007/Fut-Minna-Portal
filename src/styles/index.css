@@ -1566,6 +1566,24 @@ html, body {
   .student-dashboard-sidebar.open {
     transform: translateX(0) !important;
   }
+
+  .admin-desktop-sidebar {
+    display: none !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .admin-header-sub,
+  .admin-header-search,
+  .admin-header-name,
+  .admin-logout-text {
+    display: none !important;
+  }
+
+  .admin-dashboard-header {
+    padding: 0.5rem 0.85rem !important;
+    gap: 0.5rem !important;
+  }
 }
 
 
