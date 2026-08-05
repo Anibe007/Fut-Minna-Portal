@@ -2,7 +2,7 @@ import React from 'react';
 import { Home, FileText, CreditCard, GraduationCap, UserCheck } from 'lucide-react';
 import { sidebarItems } from '../data/portalData';
 
-export default function Sidebar({ activeTab, setActiveTab }) {
+export default function Sidebar({ activeTab, setActiveTab, onOpenModal }) {
   const getIcon = (iconName, isActive) => {
     const props = { size: 22, color: isActive ? '#ffffff' : '#94a3b8' };
     switch (iconName) {
@@ -12,6 +12,19 @@ export default function Sidebar({ activeTab, setActiveTab }) {
       case 'GraduationCap': return <GraduationCap {...props} />;
       case 'UserCheck':     return <UserCheck {...props} />;
       default:              return null;
+    }
+  };
+
+  const handleNavClick = (item) => {
+    setActiveTab(item.id);
+    if (item.id === 'payments') {
+      onOpenModal('central-payments');
+    } else if (item.id === 'admissions') {
+      onOpenModal('instructions', 'undergraduate');
+    } else if (item.id === 'applications') {
+      onOpenModal('instructions', 'pre-degree');
+    } else if (item.id === 'support') {
+      onOpenModal('admin-login');
     }
   };
 
@@ -48,7 +61,7 @@ export default function Sidebar({ activeTab, setActiveTab }) {
         return (
           <button
             key={item.id}
-            onClick={() => setActiveTab(item.id)}
+            onClick={() => handleNavClick(item)}
             aria-label={item.label}
             className={`sidebar-nav-btn${isActive ? ' active' : ''}`}
           >

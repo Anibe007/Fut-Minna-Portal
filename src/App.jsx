@@ -94,7 +94,7 @@ export default function App() {
         {/* Main Body Shell */}
         <div className="main-wrapper">
           {/* Desktop Sidebar Navigation */}
-          <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} />
+          <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} onOpenModal={handleOpenHeaderModal} />
 
           {/* Main Body Content Area */}
           <main className="main-body-container">
